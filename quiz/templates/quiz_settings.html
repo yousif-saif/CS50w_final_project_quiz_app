@@ -1,0 +1,57 @@
+
+{% extends "layout.html" %}
+
+{% block body %}
+
+{% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/styles.css">
+
+    <h1 id="score" style="display: none; color: white; text-align: center;" class="mb-4"></h1>
+
+    <div id="timer">
+        <p id="timeLeft">00:00</p>
+    </div>
+
+
+    <div class="col-md-3 mx-auto" id="quiz_settings">
+        <label for="num_questions" style="color: white;" class="mt-2 mb-2">Chose how your quiz will work: </label>
+
+        <div class="text-center">
+            <select name="num_questions" id="HowQuizWorks" class="form-control">
+                <option value="easy" selected>5 points per question (Easy 20 questions in 15 minutes)</option>
+                <option value="medium">10 points per question (Medium 10 questions in 10 minutes)</option>
+                <option value="hard">20 points per question (Hard 5 questions 10 minutes)</option>
+
+            </select>
+
+
+        
+        </div>
+
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" id="quizSettingsButton">Start Quiz</button>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4 mx-auto" id="quiz" style="display: none;">
+        
+
+    </div>
+
+    <h1 id="timesUp">Times Up!</h1>
+
+    <div class="d-flex justify-content-center align-items-center">
+        <button class="btn btn-primary mt-4 mb-4" style="display: none; width: 200px;" id="submitButton">Submit</button>
+
+    </div>
+
+    <h1 id="wait" style="display: none; color: white; text-align: center;">Please wait until your quiz is prepared</h1>
+
+    
+    <script src="../static/quizLogic.js"></script>
+
+
+{% endblock %}

@@ -1,0 +1,154 @@
+#reqs li{
+    color: white;
+    text-decoration-color: white;
+}
+
+#categoriesDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#category{
+    border: white 2px solid;
+    border-radius: 10px;
+    color: white;
+    width: 300px;
+    height: auto;
+    margin: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    
+}
+
+#category:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+
+}
+
+#category img{
+    height: 200px;
+    width: 300px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top: 6.5%;
+    
+}
+
+#category h1{
+    font-family: sans-serif;
+    text-align: center;
+
+}
+
+#category h3{
+    font-family: sans-serif;
+    /* margin-top: -5%; */
+    text-align: center;
+}
+
+#navBar{
+    padding: 10px;
+    margin: -8px;
+    font-family: sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: white solid 2px;
+    width: 99%;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+#navBar span{
+    margin-left: 100px;
+    color: white;
+    
+}
+
+#navBar a{
+    margin-left: 100px;
+    margin-bottom: 10px;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+#navBar a:hover{
+    transform: scale(1.4);
+    margin-left: 100px;
+    color: white;
+    text-decoration: none;
+}
+
+#question{
+    transition: transform 0.2s;
+}
+
+#question:hover{
+    transform: scale(1.1);
+
+}
+
+#note{
+    color: yellow;
+    size: 10px;
+}
+
+#timer{
+    position: fixed;
+    background-color: white;
+    width: 90px;
+    margin-left: 1%;
+    padding-top: 10px;
+    text-align: center;
+    border-radius: 10px;
+    display: none;
+
+}
+
+#timesUp{
+    color: white;
+    text-align: center;
+    margin-top: 10%;
+    display: none;
+
+}
+
+.selectedAndCorrect{
+    background: linear-gradient(to right, rgb(13, 110, 253) 50%, lightgreen 50%);
+
+}
+
+
+
+
+
+#all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#analytics, #recent_quizzes {
+    width: 100%; 
+    max-width: 800px;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+
+p, h5 {
+    font-family: sans-serif;
+    font-size: 25px;
+    margin: 10px;
+}
+
+#value {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #007bff;
+}

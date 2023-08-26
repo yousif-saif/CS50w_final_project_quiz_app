@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+{% load static %}
+
+
+
+<div id="categoriesDiv">
+    {% for i in quizzes %}
+        <div id="category" onclick="renderQuiz('{{i.id}}')">
+            <h1>{{i.title}}</h1>
+            <h3 id="difficulty">Difficulty: {{i.difficulty}}</h3>
+            <h3>Category: {{i.category}}</h3>
+            <h3>Time: {{ i.timer }}</h3>
+            <img src="{{i.img_url}}">
+
+        </div>
+
+        {% empty %}
+            <h1 style="text-align: center; color: white;">No quizzes</h1>
+
+    {% endfor %}
+
+</div>
+
+<script>
+    function renderQuiz(categoryId){
+        window.location.href = `/${categoryId}/discover`
+    }
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+{% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/styles.css">
+
+    <h1 class="text-center" style="margin-top: 10%; color: white;">Sign Up</h1>
+    <form action="/sign_up" method="post">
+        {% csrf_token %}
+        <div class="col-md-3 mx-auto" style="margin-top: 5%;">
+            <div class="text-center">
+                <input type="text" name="name" class="form-control mb-2 rounded-0 bg-light" autofocus placeholder="Name">
+                <input type="email" name="email" class="form-control mb-2 rounded-0 bg-light" placeholder="Email">
+                <input type="password" name="password" class="form-control mb-2 rounded-0 bg-light" placeholder="Password">
+                
+                <ul id="reqs">
+                    <li>password must be at least 3 characters long</li>
+                    <li>password must be less than 15 characters</li>
+                    <li>password must have at least one symbol</li>
+
+                </ul>
+
+                <button class="btn btn-primary rounded-0 w-100 mt-3">Sign Up</button>
+            </div>
+        </div>
+    </form>
+
+    <p class="text-center fs-6" style="text-align: center; margin-top: 20px; color: white;">Have An Account? <a href="/login">Log In</a></p>
+    <p class="text-center fs-3" style="color: #dc3545;" id="error_message">{{ error_message }}</p>
+
+        
+
+{% endblock %}

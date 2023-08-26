@@ -1,0 +1,49 @@
+
+{% extends "layout.html" %}
+
+{% block body %}
+
+{% load static %}
+    <link rel="stylesheet" href="../static/styles.css">
+
+    <div id="all">
+        <section id="analytics">
+            <div id="score">
+                <p>Average Score:</p>
+                <p><span id="value">{{score_average}}%</span></p>
+            </div>
+
+            <div id="time">
+                <p>Average Time:</p>
+                <p><span id="value">{{time_average}}</span></p>
+            </div>
+            
+            <div>
+                <p>Most played difficulties:</p>
+                <p><span id="value">{{ most_played_difficulty }}</span></p>
+            </div>
+
+
+        </section>
+
+        <section id="recent_quizzes">
+            <p>Most 3 recent quizzes:</p>
+            <ul>
+                {% for i in list_recent_quizzes %}
+                    <li>
+                        <p>{{ i.title }}</p>
+                        <h5>Score:  {{ i.score }}%</h5>
+                        <h5>Time:  {{ i.time }}</h5>
+
+                    </li>
+
+                {% endfor %}
+                
+            </ul>
+        </section>
+    </div>
+
+        
+
+
+{% endblock %}

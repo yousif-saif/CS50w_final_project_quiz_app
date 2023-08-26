@@ -1,0 +1,135 @@
+
+{% extends "layout.html" %}
+
+{% block body %}
+
+{% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/styles.css">
+
+    <div id="timer">
+        <p id="timeLeft">00:00</p>
+    </div>
+
+
+    <div class="col-md-3 mx-auto" id="quiz_settings">
+        
+        <label for="quiz_title" style="color: white;" class="mt-2 mb-2">Quiz title: </label>
+
+        <div class="text-center">
+            <input type="text" name="quiz_title" id="quiz_title" class="form-control" placeholder="Title: ">
+
+        </div>
+
+        <label for="quiz_img" style="color: white;" class="mt-2 mb-2">Quiz image link: </label>
+        <div class="text-center">
+            <input type="text" name="quiz_img" id="quiz_img" class="form-control" placeholder="Quiz image link: ">
+
+        </div>
+
+        <label for="difficulty" style="color: white;" class="mt-2 mb-2">Difficulty:</label>
+
+        <div class="text-center">
+            <select name="difficulty" id="difficulty" class="form-control">
+                <option value="any" selected>Any difficulty</option>
+                <option value="easy">easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+
+            </select>
+        </div>
+
+
+        <label for="category" style="color: white;" class="mt-2 mb-2">Category: </label>
+
+        <div class="text-center">
+            <select name="category" id="categorySelect" class="form-control">
+                <option value="Other" selected>Other category</option>
+                <option value='General Knowledge'>General Knowledge</option>
+                <option value='Books'>Books</option>
+                <option value='Film'>Film</option>
+                <option value='Television'>Television</option>
+                <option value='video Games'>video Games</option>
+                <option value='Board Games'>Board Games</option>
+                <option value='Science & Nature'>Science & Nature</option>
+                <option value='Computers'>Computers</option>
+                <option value='Mathematics'>Mathematics</option>
+                <option value='Sports'>Sports</option>
+                <option value='Geography'>Geography</option>
+                <option value='History'>History</option>
+                <option value='Politics'>Politics</option>
+                <option value='Art'>Art</option>
+                <option value='Celebrities'>Celebrities</option>
+                <option value='Animals'>Animals</option>
+                <option value='Vehicles'>Vehicles</option>
+                <option value='Comics'>Comics</option>
+
+            </select>
+        </div>
+
+        <label for="timer" style="color: white;" class="mt-2 mb-2">Set timer For your quiz: </label>
+
+        <div class="text-center" name="timer">
+            <input type="number" class="form-control col-md-6 mb-2" style="display: inline;" id="mins" placeholder="Minutes:">
+
+
+        </div>
+
+
+
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" id="createQuiz">Start creating your quiz</button>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4 mx-auto" id="quiz" style="display: none;">
+             
+        <div class="text-center" style="color: white;">
+            <h5>Hold on your correct answers that you enter until its green.</h5>
+            <h5>Double tap on any choice to delete it.</h5>
+            <h5>Double tap on any question to delete the whole question.</h5>
+
+
+
+        </div>
+
+        <div id="questions">
+
+            <div id="questionDiv" class="mb-3">
+                <input type="text" class="form-control mb-3" id="questionText" placeholder="Question: ">
+
+                <div id="choices">
+                    <input type="text" id="question" class="form-control mb-3" placeholder="Choice: ">
+                    <input type="text" id="question" class="form-control mb-3" placeholder="Choice: ">
+
+                </div>
+                
+                <div class="d-flex justify-content-center text-center">
+                    <button class="btn btn-primary" id="addChoice">Add choice</button>
+
+                </div>
+
+            </div>
+        
+        </div>
+
+        <div class="d-flex justify-content-center text-center">
+            <button class="btn btn-primary" id="addQuestion">Add question</button>
+
+        </div>
+        
+        <div class="d-flex justify-content-center text-center mt-3">
+            <button class="btn btn-primary" id="finshQuiz">Finish quiz</button>
+
+        </div>        
+
+    </div>
+
+
+    
+    <script src="../static/createQuiz.js"></script>
+
+
+{% endblock %}

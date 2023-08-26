@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+
+    <title>Quiz App</title>
+</head>
+<body style="background-image: url('../static/dark-background.png');background-size: cover;">
+    <div id="navBar">
+        <span>You are logged in as <strong id="username">{{ username }}</strong></span>
+        <a href="/">Home</a>
+        <a href="/quizzes_analytics">Your quizzes analytics</a>
+        <a href="/discover_quizzes">Discover Quizzes</a>
+        <a href="/create_quiz">Create Quiz</a>
+        <a href="/your_quizzes">Your quizzes</a>
+        <a href="/logout">Logout</a>
+    </div>
+    
+    {% block body %}
+    {% endblock %}
+</body>
+</html>
